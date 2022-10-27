@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.863);
+    color: white;
+    padding: 20px 0;
+    background-image: url(images/background.jpg); /*изображение на фон header*/
+    background-color:rgba(0,0,0,.3);
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.txt-centre {
+    text-align: center;
+}
+
+.main-menu a {
+    text-decoration: none; /*убрать подчёркивание навигационных ссылок*/
+    color: white;
+    font-weight: bold;
+}
+
+.main-menu ul {
+    text-align: center;
+    list-style: none; /*убираем маркеры списка*/
+    margin: 0; /*внешний отступ в списке*/
+    margin-left: 70px;
+    font-size: 18px;
+    padding: 10px; /*внутренний отступ в списке*/
+}
+
+.main-menu li  {
+    display: inline; /*элементы списка теперь выстраиваются в линию, а не в столбец*/
+    padding: 0 50px; /*внутренний отступ между элементами списка*/
+}
+
+.main-menu li:first-child {
+    margin-right: 30px;
+}
+
+.container {
+    max-width: 50%;
+    margin: 0 20px;
+}
+
+.footer {
+    background-color: rgba(0, 0, 0, 0.863);
+    color: white;
+    padding: 20px 0;
+    text-align: right;
+    padding-right: 20px;
+}
+
+
+.image_dog {
+    text-align: right;
+    padding: 0 40px 40px 0;
+    float: right; /*картинка располагается справа от текста*/
+    margin: 0; 
+    height: 300px;
+    min-height: 10em; 
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.image_dog img {
+    height: 100%;
+}
+
+/*попытка выравнить картинку по вертикали внутри main
+.vertical-centre {
+    min-height: 10em;
+    display: table-cell;
+    vertical-align: middle;
+}*/
+
+table {
+    border-collapse: collapse; /* убираем расстояние между ячейками */
+}
+
+th,td {
+    border: 1px solid black;  
+    text-align: center;
+    padding: 10px;
+}
