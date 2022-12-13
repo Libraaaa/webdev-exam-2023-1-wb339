@@ -1,41 +1,111 @@
 html {
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
 
 body {
     margin: 0;
-    background-image: url(images/background.jpg); 
+    min-height: 100vh; 
+    position: relative;
+}
+
+.header {
+    background-color: rgb(255, 238, 50);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+}
+
+.container {
+    font-size: 1.3rem;
+    max-width: 95%;
+    margin: 0 auto; /* выравниваем все блочные элементы по центру */
+}
+
+.main-menu {
+    flex-grow: 1;
+}
+
+.main-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-menu li {
+    padding: 5px;
+}
+
+.main-menu ul, li {
+    display: inline;
+}
+
+/*настриваем вид гиперссылок */
+.container a {
+    text-decoration: none; /*выделение текста*/
+    color: black;
+}
+
+.d-flex {
+    display: flex;
+}
+
+
+main {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    flex-direction: column;
+    height: 90vh;
 }
 
-main {
-    color: rgb(172, 23, 105);
-    text-align: center;
+.border {
+    padding: 2%;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
-/* ul{
-    list-style: none; 
-    font-size: 18px;
-    /* padding: 0; 
-} */
+form {
+    font-size: 120%;
+}
 
-/* header li{
-    padding: 10px 0;
-} */
+.field {
+    margin: 10px 10px 0px 10px;
+    font-weight: bold;
+}
+
+#login, #password, button {
+    width: 90%;
+}
 
 button {
-    font-size: 28px;
-    margin: 15px;
-    background-color: rgb(240, 128, 190);
+    font-size: 20px;
+    color: white;
+    margin: 10px;
+    background-color: rgb(174, 2, 2);
     border-width: 1.5px;
     border-color: rgb(248, 248, 248);
     border-radius: 5px;
 }
 
-a {
-    text-decoration: none; /*выделение текста*/
-    color: black;
-}
+@media all and (max-width: 500px) {
+    .d-flex {
+      justify-content: space-around;
+    }
+
+    .main-menu {
+        display: flex;
+        flex-grow: 0;
+        justify-content: center;
+    }
+
+    .profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header .container {
+        flex-direction: column;
+    }
+
+  }
