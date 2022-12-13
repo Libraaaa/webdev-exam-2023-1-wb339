@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="authoriz.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="print.css" media="print">
+    <title>Вход</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container d-flex">
+            <nav class="main-menu">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="profile">
+                <a href="authoriz.html">Вход</a>
+            </div>
+
+        </div>
+    </header>
+    <main>
+        <div class="border">
+        <h1>Авторизация</h1>
+        <!-- <section id="autoriz"> -->
+        <!-- создаём форму -->
+        <form method="POST" action="https://httpbin.org/post">
+            <div class="field">
+                <p class="text"><label for="login">Логин</label></p>
+                <input type="text" name="login" id="login" placeholder="Логин" required>
+            </div>
+
+            <div class="field">
+                <p class="text"><label for="password">Пароль</label></p>
+                <input type="password" name="password" id="password" placeholder="Пароль" required>
+            </div>
+    
+            <div class="field">
+                <p><input type="checkbox" name="remember" id="remember" value="true">
+                <label for="remember">Запомнить меня</label></p>
+            </div>
+
+            <p><button type="submit">Войти</button></p>
+
+        </form>
+        <!-- </section> -->
+    </div>
+    </main>
+</body>
+</html>

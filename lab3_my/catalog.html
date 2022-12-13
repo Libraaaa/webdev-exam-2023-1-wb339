@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="catalog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="print.css" media="print">
+    <title>Каталог</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container d-flex">
+            <nav class="main-menu">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="profile">
+                <a href="authoriz.html">Вход</a>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="container d-flex">
+        <aside class="sidebar">
+            <form>
+                <fieldset>
+                    <legend>Коллекция</legend>
+                    <!-- div*5>input:checkbox+label -->
+                    <div>
+                        <input type="checkbox" value="manufacturer1" name="manufacturer" id="manufacturer1">
+                        <label for="manufacturer1">Batman</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" value="manufacturer2" name="manufacturer" id="manufacturer2">
+                        <label for="manufacturer2">City</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" value="manufacturer3" name="manufacturer" id="manufacturer3">
+                        <label for="manufacturer3">Disney</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" value="manufacturer4" name="manufacturer" id="manufacturer4">
+                        <label for="manufacturer4">DUPLO</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" value="manufacturer5" name="manufacturer" id="manufacturer5">
+                        <label for="manufacturer5">Star Wars</label>
+                    </div>
+                </fieldset>
+
+                <button type="submit">Применить</button>
+            </form>
+        </aside>
+
+        <div class="page-content">
+            <h1 class="product-category-header">Наборы</h1>
+
+            <!-- блок с ассортиментом -->
+            <div class="products-list">
+                <!-- блок с товаром -->
+                <!-- Batman -->
+                <div class="product-card">
+                    <!-- изображение товара -->
+                    <div class="product-image">
+                        <img src="images/batman.png" alt="product">
+                    </div>
+
+                    <div class="product-details">
+                        <header>Бэтмэн</header>
+
+                        <p class="information">Этот потрясающий набор, включающий в себя 115 деталей и предназначенный
+                            для детей от 8 лет, является частью серии наборов LEGO® Brick Sketches™ для сборки
+                            коллекционных 3D-портретов легендарных персонажей на базовых пластинах 12 х 16.</p>
+
+                        <!-- кнопки цена и заказать -->
+                        <div class="control">
+                            <button class="btn">
+                                <span class="price">1000 &#8381</span><span class="buy">Купить</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- City -->
+                <div class="product-card">
+                    <!-- изображение товара -->
+                    <div class="product-image">
+                        <img src="images/city.png" alt="product">
+                    </div>
+
+                    <div class="product-details">
+                        <header>Адвент календарь LEGO® City</header>
+
+                        <p class="information">«Новогодний календарь» LEGO City станет прекрасным подарком для детей в
+                            возрасте от 5 лет. Для каждой игрушки-сюрприза есть простые и понятные инструкции по сборке,
+                            что гарантирует, что даже новые строители LEGO смогут наслаждаться веселым конструированием
+                            и игрой.</p>
+
+                        <!-- кнопки цена и заказать -->
+                        <div class="control">
+                            <button class="btn">
+                                <span class="price">4000 &#8381</span><span class="buy">Купить</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Disney -->
+                <div class="product-card">
+                    <!-- изображение товара -->
+                    <div class="product-image">
+                        <img src="images/mikki-mouse.png" alt="product">
+                    </div>
+
+                    <div class="product-details">
+                        <header>Микки Маус</header>
+
+                        <p class="information">С набором «Микки Маус» LEGO® Brick Sketches™ поклонники легендарных
+                            персонажей Disney смогут собрать портрет Микки Мауса и показать его друзьям.</p>
+
+                        <!-- кнопки цена и заказать -->
+                        <div class="control">
+                            <button class="btn">
+                                <span class="price">1000 &#8381</span><span class="buy">Купить</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Duplo -->
+                <!-- блок с товаром -->
+                <div class="product-card">
+                    <!-- изображение товара -->
+                    <div class="product-image">
+                        <img src="images/duplo.png" alt="product">
+                    </div>
+
+                    <div class="product-details">
+                        <header>Весёлые зверюшки</header>
+
+                        <p class="information">Все дети любят животных, верно? Играя с этим набором для сборки девяти
+                            очаровательных животных из разных уголков света, дети будут развивать воображение, а также
+                            творческие способности и практические навыки.</p>
+
+                        <!-- кнопки цена и заказать -->
+                        <div class="control">
+                            <button class="btn">
+                                <span class="price">1000 &#8381</span><span class="buy">Купить</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Star Wars -->
+                <div class="product-card">
+                    <!-- изображение товара -->
+                    <div class="product-image">
+                        <img src="images/star-wars.png" alt="product">
+                    </div>
+
+                    <div class="product-details">
+                        <header>Адвент календарь LEGO Star Wars</header>
+
+                        <p class="information">В этом праздничном календаре есть 7 минифигурок, фигурок и дроидов LEGO:
+                            Мандалорец и малыш Грогу, которого ласково называют «Мини-Йодой», в праздничных нарядах,
+                            пехотинец-разведчик, штурмовик, тускенский рейдер, IG-11 и дроид-дознаватель IT-O.</p>
+
+                        <!-- кнопки цена и заказать -->
+                        <div class="control">
+                            <button class="btn">
+                                <span class="price">4000 &#8381</span><span class="buy">Купить</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="scroll-to-top-btn">
+            &#9650;
+        </button>
+
+    </main>
+</body>
+
+</html>

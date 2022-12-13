@@ -1,0 +1,41 @@
+html {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-image: url(images/background.jpg); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+main {
+    color: rgb(172, 23, 105);
+    text-align: center;
+}
+
+/* ul{
+    list-style: none; 
+    font-size: 18px;
+    /* padding: 0; 
+} */
+
+/* header li{
+    padding: 10px 0;
+} */
+
+button {
+    font-size: 28px;
+    margin: 15px;
+    background-color: rgb(240, 128, 190);
+    border-width: 1.5px;
+    border-color: rgb(248, 248, 248);
+    border-radius: 5px;
+}
+
+a {
+    text-decoration: none; /*выделение текста*/
+    color: black;
+}
