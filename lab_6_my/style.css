@@ -1,0 +1,43 @@
+.navbar-brand img {
+    height: 40px;
+}
+
+.quote, .info, .progr, .contacts, .footer {
+    background-color: #1A1A1D;
+    color: white;
+}
+
+
+.heading-line {
+    width: 500px;
+    max-width: 80%;
+    height: 3px;
+    background-color: #C3073F; 
+}
+
+h3 {
+    font-weight: normal;
+}
+
+.description, .progr .row >* {
+    font-size: 1.2rem;
+}
+
+section {
+    border: none;
+}
+
+.progr {
+    border-radius: 0;
+}
+
+i.bi {
+    color: #C3073F;
+    font-size: 2rem;
+}
+
+.btn-light {
+    border-color: #C3073F;
+    background-color: #C3073F;
+    color: white;
+}
