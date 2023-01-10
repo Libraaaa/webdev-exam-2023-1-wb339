@@ -1,0 +1,44 @@
+/* html {
+    height: 100vh;
+} */
+
+body {
+    height: 100vh;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url(images/background_main.jpg); 
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+main {
+    height: 90vh;
+}
+
+.draw {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 28px;
+}
+
+h2 {
+    flex-direction: column;
+    text-align: center;
+}
+
+.navbar {
+    width: 100%;
+}
+
+.navbar a, h2 {
+    color: white;
+}
+
+h1 {
+    color: white;
+    text-align: left;
+}
+
+.hero {
+    width: 100%;
+    flex-wrap: wrap;
+    height: 70%;
+}
