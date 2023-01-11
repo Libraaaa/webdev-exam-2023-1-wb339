@@ -4,7 +4,7 @@ html {
 
 body {
     /* height: 100%; */
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url(../images/background_main.jpg); 
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url(../images/background_main.jpg);
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
@@ -29,17 +29,20 @@ h2 {
     width: 100%;
 }
 
-.navbar a, h2 {
+.navbar a,
+h2 {
     color: white;
 }
+
 /**/
 
 .hero {
     background-color: rgb(0, 40, 25);
     max-width: 70%;
     margin: auto;
-    box-shadow:0 0 10px rgb(211, 199, 97); /*эффект свечения*/ 
-    max-height: 215px;
+    box-shadow: 0 0 10px rgb(211, 199, 97);
+    /*эффект свечения*/
+    /* max-height: 215px; */
     display: block;
 }
 
@@ -73,7 +76,8 @@ h2 {
     background-color: white;
 }
 
-.list-route-h2, .list-guide-h2 {
+.list-route-h2,
+.list-guide-h2 {
     text-align: left;
     color: black !important;
 }
@@ -90,12 +94,14 @@ h2 {
     --bs-gutter-x: 0;
 }
 
-.list-route .btn-secondary, .list-guide .btn-secondary{
+.list-route .btn-secondary,
+.list-guide .btn-secondary {
     background-color: azure;
-    color:black;
+    color: black;
 }
 
-.input-group, .input-group-skill {
+.input-group,
+.input-group-skill {
     width: 30%;
 }
 
@@ -104,7 +110,8 @@ h2 {
     height: 20%;
 }
 
-.from, .to {
+.from,
+.to {
     height: 40px;
     width: 60px;
 }
@@ -119,6 +126,7 @@ table {
 
 .routes-table td {
     width: 30%;
+    padding: 10px;
 }
 
 .guides-table td {
@@ -167,7 +175,7 @@ table {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    
+
 }
 
 #language-select {
@@ -199,7 +207,7 @@ form .row {
     --bs-btn-hover-color: #6c757d;
     --bs-btn-hover-bg: white;
     --bs-btn-hover-border-color: #6c757d;
-    --bs-btn-focus-shadow-rgb: 130,138,145;
+    --bs-btn-focus-shadow-rgb: 130, 138, 145;
     --bs-btn-active-color: #6c757d;
     --bs-btn-active-bg: #d8d8d8;
     --bs-btn-active-border-color: #6c757d;
@@ -218,3 +226,16 @@ form .row {
     text-align: center;
 }
 
+@media (max-width: 768px) {
+    .list-route .flex-top, .list-guide .flex-top{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .list-route .flex-top .input-group, .list-guide .flex-top .input-group-skill {
+        width: 100%;
+        margin-bottom: 10%; 
+        justify-content: center;
+    }
+
+}

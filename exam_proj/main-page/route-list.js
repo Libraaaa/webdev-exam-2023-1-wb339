@@ -175,6 +175,10 @@ function newOrderModal(guideElement) {
 
     calculateTotalPrice();
     document.querySelector('#send-order').addEventListener('click', showAlertHandler);
+    document.getElementById(guideElemId).style.backgroundColor = '';
+    document.getElementById(itElemId).style.backgroundColor = '';
+
+
 
 }
 
@@ -244,7 +248,6 @@ async function calculateTotalPrice() {
     let increase1 = 0;
     if (option1.checked) {
         increase1 = totalPrice * 0.3;
-        optionFirst = 1;
     }
 
 
@@ -252,7 +255,6 @@ async function calculateTotalPrice() {
     let increase2 = 0;
     if (option2.checked) {
         increase2 = 500 * countPeople;
-        optionSecond = 1;
     }
 
     let spanTotalPrice = modalWindow.querySelector('.total-price').querySelector('span');
@@ -318,6 +320,7 @@ async function postOrder(event) {
 
     modalWindow.querySelector('form').reset();
     return responsePars;
+
 }
 
 

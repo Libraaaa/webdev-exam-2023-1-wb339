@@ -43,7 +43,7 @@
         </nav>
 
         <div class="hero py-4 mb-5">
-            <div class="row">
+            <div class="row" style="margin: 8px;">
                 <div class="col-lg-6 ">
                     <div class="img-logo d-flex justify-content-center">
                         <img class="img-fluid" src="../images/logo.png" alt="web-dev">
@@ -52,7 +52,7 @@
                 </div>
 
                 <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                    <p class="info">Лучшие туристические маршруты яркой столицы России собраны здесь!</p>
+                    <p class="info me-0 me-md-3">Лучшие туристические маршруты яркой столицы России собраны здесь!</p>
                 </div>
             </div>
         </div>
@@ -60,7 +60,8 @@
 
         <!-- Уведомления -->
         <div class="alerts d-flex" style="justify-content: center;">
-            <div class="alert alert-success alert-dismissible fade show" role="alert" id="alert-success" style="display: none; width: 50%;">
+            <div class="alert alert-success alert-dismissible fade show" role="alert" id="alert-success"
+                style="display: none; width: 50%;">
                 Заявка была успешно отправлена!
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -91,45 +92,48 @@
 
 
                 <!-- таблица маршрутов -->
-                <table class="table-bordered routes-table"
-                    data-url="http://exam-2023-1-api.std-900.ist.mospolytech.ru/api/routes?api_key=83d0d1af-0b9b-484e-bfc0-a2e63b7a456a">
-                    <thead>
-                        <tr style="background-color: rgb(244, 229, 207);">
-                            <th>Название</th>
-                            <th>Описание</th>
-                            <th colspan="2">Основные объекты</th>
-                        </tr>
-                    </thead>
-                    <tbody class="tbody-route">
-                        <tr class="route-list-item">
-                            <td class="item-col-first"></td>
-                            <td class="item-col-second"></td>
-                            <td class="item-col-third"></td>
-                            <td class="item-col-change">
-                                <button class="change-btn-route">Выбрать</button>
-                            </td>
-                        </tr>
+                <div class="table-responsive">
+                    <table class="table-bordered routes-table"
+                        data-url="http://exam-2023-1-api.std-900.ist.mospolytech.ru/api/routes?api_key=83d0d1af-0b9b-484e-bfc0-a2e63b7a456a">
+                        <thead>
+                            <tr style="background-color: rgb(244, 229, 207);">
+                                <th>Название</th>
+                                <th>Описание</th>
+                                <th colspan="2">Основные объекты</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody-route">
+                            <tr class="route-list-item">
+                                <td class="item-col-first"></td>
+                                <td class="item-col-second"></td>
+                                <td class="item-col-third"></td>
+                                <td class="item-col-change">
+                                    <button class="change-btn-route">Выбрать</button>
+                                </td>
+                            </tr>
 
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
 
-                <nav aria-label="Page navigation">
-                    <ul class="pagination pagination-routes mt-3">
-                        <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
+
+                    <nav aria-label="Page navigation" class="d-flex d-md-block">
+                        <ul class="pagination pagination-routes mt-3 ms-5 ps-5 ps-md-0 ms-md-0">
+                            <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
                         <li class="page-item"><a class="page-link" href="#">2</a></li>
                         <li class="page-item"><a class="page-link" href="#">3</a></li> -->
-                    </ul>
-                </nav>
+                        </ul>
+                    </nav>
 
+                </div>
             </div>
         </div>
 
         <template id="route-template">
             <tr class="route-list-item">
-                <td class="item-col-name"></td>
-                <td class="item-col-desc"></td>
-                <td class="item-col-mainobjects"></td>
+                <td class="item-col-name align-top"></td>
+                <td class="item-col-desc align-top"></td>
+                <td class="item-col-mainobjects align-top"></td>
                 <td class="item-col-change">
                     <button class="change-btn-route">Выбрать</button>
                 </td>
@@ -160,43 +164,48 @@
 
 
                 <!-- таблица гидов -->
-                <table class="table-bordered guides-table" data-url="http://exam-2023-1-api.std-900.ist.mospolytech.ru">
-                    <thead>
-                        <tr style="background-color: rgb(244, 229, 207);">
-                            <th></th>
-                            <th>ФИО</th>
-                            <th>Языки</th>
-                            <th>Опыт работы (в годах)</th>
-                            <th>Стоимость услуг в час</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody class="tbody-guide">
-                        <tr class="guide-list-item">
-                            <td class="item-col-icon">
-                                <img src="../images/guide_icon.png" style="width: 100%;">
-                            </td>
-                            <td class="item-col-name"></td>
-                            <td class="item-col-language"></td>
-                            <td class="item-col-experience"></td>
-                            <td class="item-col-price-per-hour"></td>
-                            <td class="item-col-change">
-                                <button class="change-btn-guide" data-bs-toggle="modal"
-                                    data-bs-target="#show-order">Выбрать</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="table-bordered guides-table"
+                        data-url="http://exam-2023-1-api.std-900.ist.mospolytech.ru">
+                        <thead>
+                            <tr style="background-color: rgb(244, 229, 207);">
+                                <th></th>
+                                <th>ФИО</th>
+                                <th>Языки</th>
+                                <th>Опыт работы (в годах)</th>
+                                <th>Стоимость услуг в час</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody-guide">
+                            <tr class="guide-list-item">
+                                <td class="item-col-icon">
+                                    <img src="../images/guide_icon.png" style="width: 100%;">
+                                </td>
+                                <td class="item-col-name"></td>
+                                <td class="item-col-language"></td>
+                                <td class="item-col-experience"></td>
+                                <td class="item-col-price-per-hour"></td>
+                                <td class="item-col-change">
+                                    <button class="change-btn-guide" data-bs-toggle="modal"
+                                        data-bs-target="#show-order">Выбрать</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <template id="guide-template">
                     <tr class="guide-list-item">
                         <td class="item-col-icon">
                             <img src="../images/guide_icon.png" style="width: 100%;">
                         </td>
-                        <td class="item-col-name"></td>
-                        <td class="item-col-language"></td>
-                        <td class="item-col-experience"></td>
-                        <td class="item-col-price-per-hour"></td>
+                        <td class="item-col-name align-top" style="padding: 10px;"></td>
+                        <td class="item-col-language align-top" style="padding: 10px;"></td>
+                        <td class="item-col-experience align-middle" style="padding: 10px; text-align: center;">
+                        </td>
+                        <td class="item-col-price-per-hour align-middle" style="padding: 10px; text-align: center;">
+                        </td>
                         <td class="item-col-change">
                             <button class="change-btn-guide" data-bs-toggle="modal"
                                 data-bs-target="#show-order">Выбрать</button>
@@ -208,8 +217,10 @@
         </div>
     </main>
 
-    <footer>
-
+    <footer class="footer d-flex" style="background-color: rgba(0, 40, 25, 0.607); height: 50px; align-items: center;">
+        <div class="footer-div ps-2">
+            <p class="text-muted mb-0" style="color: white;">&copy; 2022 Московский политехнический университет</p>
+        </div>
     </footer>
 
     <!-- Модальное окно Создания заявки -->
@@ -261,6 +272,13 @@
                                     <input class="form-control" type="time" id="excursion-time" name="excursion-time"
                                         value="09:00" min="09:00" max="22:30" step="1800" required>
                                 </div>
+                                <div class="col-md-4">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="text-muted" style="text-align: left; font-size: 13px;">
+                                        Доступное время экскурсии с 9:00 до 22:30
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="row mb-3">
@@ -284,6 +302,13 @@
                                 <div class="col-md-8">
                                     <input class="form-control" type="number" id="count-people" name="count-people"
                                         min="1" max="20" value="1" required>
+                                </div>
+                                <div class="col-md-4">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="text-muted" style="text-align: left; font-size: 13px;">
+                                        Min: 1, Max: 20
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -332,10 +357,10 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отменить</button>
-                    <button type="button" class="btn btn-primary" id="send-order" data-bs-dismiss="modal" 
-                    data-url="http://exam-2023-1-api.std-900.ist.mospolytech.ru/api/orders?api_key=83d0d1af-0b9b-484e-bfc0-a2e63b7a456a">
-                    Отправить
-                </button>
+                    <button type="button" class="btn btn-primary" id="send-order" data-bs-dismiss="modal"
+                        data-url="http://exam-2023-1-api.std-900.ist.mospolytech.ru/api/orders?api_key=83d0d1af-0b9b-484e-bfc0-a2e63b7a456a">
+                        Отправить
+                    </button>
                 </div>
             </div>
         </div>
