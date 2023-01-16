@@ -141,6 +141,11 @@ table {
     text-align: center;
 }
 
+i.bi {
+    color: rgb(211, 199, 97);
+    font-size: 2rem;
+}
+
 .pagination {
     cursor: pointer;
     --bs-pagination-color: #842029;

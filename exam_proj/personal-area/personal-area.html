@@ -48,30 +48,35 @@
         <div class="list-order p-3 mx-auto" style="margin-bottom: 4rem;">
             <div class="container p-0">
                 <h2 class="list-order-h2">Заявки</h2>
+                <p class="text-muted">Обращаем ваше внимание: на одной странице отображено не более пяти заявок.</p>
 
                 <div class="elements"
                     data-url="http://exam-2023-1-api.std-900.ist.mospolytech.ru/api/orders?api_key=83d0d1af-0b9b-484e-bfc0-a2e63b7a456a">
-                    <div class="card" style="margin-bottom: 16px;">
-                        <h5 class="card-header"> <span class="item-col-name"></span> </h5>
-                        <div class="card-body">
-                            <p class="card-text"> <span class="item-col-date"></span> </p>
-                            <p class="card-text"> <span class="item-col-price"></span> </p>
-                            <p class="item-col-btn">
-                            <div class="actions ms-auto">
-                                <i class="bi bi-eye me-2" data-bs-toggle="modal" data-bs-target="#show-order"
-                                    data-action="show"></i>
-                                <i class="bi bi-pencil-fill me-2" data-bs-toggle="modal" data-bs-target="#show-order"
-                                    data-action="edit"></i>
-                                <i class="bi bi-trash3" data-bs-toggle="modal" data-bs-target="#del-order"></i>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+                        <div class="col">
+                            <div class="card" style="margin-bottom: 16px;">
+                                <h5 class="card-header"> <span class="item-col-name"></span> </h5>
+                                <div class="card-body">
+                                    <p class="card-text"> <span class="item-col-date"></span> </p>
+                                    <p class="card-text"> <span class="item-col-price"></span> </p>
+                                    <p class="item-col-btn">
+                                    <div class="actions ms-auto">
+                                        <i class="bi bi-eye me-2" data-bs-toggle="modal" data-bs-target="#show-order"
+                                            data-action="show"></i>
+                                        <i class="bi bi-pencil-fill me-2" data-bs-toggle="modal"
+                                            data-bs-target="#show-order" data-action="edit"></i>
+                                        <i class="bi bi-trash3" data-bs-toggle="modal" data-bs-target="#del-order"></i>
+                                    </div>
+                                    </p>
+                                </div>
                             </div>
-                            </p>
                         </div>
                     </div>
                 </div>
 
 
-                <nav aria-label="Page navigation" class="d-flex d-md-block">
-                    <ul class="pagination pagination-orders mt-3 ms-5 ps-5 ps-md-0 ms-md-0">
+                <nav aria-label="Page navigation" class="d-flex" style="justify-content: center;">
+                    <ul class="pagination pagination-orders mt-3">
                         <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
                             <li class="page-item"><a class="page-link" href="#">2</a></li>
                             <li class="page-item"><a class="page-link" href="#">3</a></li> -->
@@ -81,31 +86,28 @@
         </div>
 
         <template id="order-template">
-            <div class="card" style="margin-bottom: 16px;">
-                <h5 class="card-header"> <span class="item-col-name"></span> </h5>
-                <div class="card-body">
-                    <p class="card-text"> <span class="item-col-date"></span> </p>
-                    <p class="card-text"> <span class="item-col-price"></span> </p>
-                    <p class="item-col-btn">
-                    <div class="actions ms-auto">
-                        <i class="bi bi-eye me-2" data-bs-toggle="modal" data-bs-target="#show-order"
-                            data-action="show"></i>
-                        <i class="bi bi-pencil-fill me-2" data-bs-toggle="modal" data-bs-target="#show-order"
-                            data-action="edit"></i>
-                        <i class="bi bi-trash3" data-bs-toggle="modal" data-bs-target="#del-order"></i>
+            <div class="col">
+                <div class="card" style="margin-bottom: 16px;">
+                    <h5 class="card-header"> <span class="item-col-name"></span> </h5>
+                    <div class="card-body">
+                        <p class="card-text"> <span class="item-col-date"></span> </p>
+                        <p class="card-text"> <span class="item-col-price"></span> </p>
+                        <p class="item-col-btn">
+                        <div class="actions ms-auto">
+                            <i class="bi bi-eye me-2" data-bs-toggle="modal" data-bs-target="#show-order"
+                                data-action="show"></i>
+                            <i class="bi bi-pencil-fill me-2" data-bs-toggle="modal" data-bs-target="#show-order"
+                                data-action="edit"></i>
+                            <i class="bi bi-trash3" data-bs-toggle="modal" data-bs-target="#del-order"></i>
+                        </div>
+                        </p>
                     </div>
-                    </p>
                 </div>
             </div>
         </template>
 
     </main>
 
-    <footer class="footer d-flex" style="background-color: rgba(0, 40, 25, 0.607); height: 50px; align-items: center;">
-        <div class="footer-div ps-2">
-            <p class="text-muted mb-0" style="color: white;">&copy; 2022 Московский политехнический университет</p>
-        </div>
-    </footer>
 
     <!-- Модальное окно Просмотр/редактирование заявки -->
     <div class="modal fade" id="show-order" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -212,7 +214,8 @@
                                     <label for="total-price" class="col-form-label">Итоговая стоимость</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <p style="font-weight: bold; margin-bottom: 0px;"><span class="total-price"> руб.</span>
+                                    <p style="font-weight: bold; margin-bottom: 0px;"><span class="total-price">
+                                            руб.</span>
                                     </p>
                                 </div>
                             </div>
@@ -254,7 +257,11 @@
     </div>
 
 
-
+    <footer class="footer d-flex" style="background-color: rgba(0, 40, 25, 0.607); height: 50px; align-items: center;">
+        <div class="footer-div ps-2">
+            <p class="text-muted mb-0" style="color: white;">&copy; 2022 Московский политехнический университет</p>
+        </div>
+    </footer>
 
     <script src="personal-area.js" defer></script>
 
