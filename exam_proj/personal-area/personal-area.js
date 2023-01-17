@@ -1,16 +1,21 @@
 let orderTemplate = document.querySelector('#order-template');
-let searchRoutes;
+let searchRoute;
+let searchGuide;
 let mainOrder;
+let titles = {
+    show: 'Просмотр заявки',
+    edit: 'Редактирование',
+};
 
+let titlesBtn = {
+    show: 'ОК',
+    edit: 'Сохранить',
+};
 
-// function nameRoute(routes) {
-//     let routeName = searchRoutes.find(item => item.id == 1);
-// }
 
 // заявки
 function deleteBtnModalHandler(event) {
     let orderItem = event.target.closest('.col');
-    // console.log(orderItem.id);
     let form = document.querySelector('#del-order').querySelector('form');
     form.elements['order-id'].value = orderItem.id;
 }
@@ -20,7 +25,7 @@ function deleteBtnModalHandler(event) {
 function createOrderListItemElement(order) {
     let itemElement = orderTemplate.content.firstElementChild.cloneNode(true);
     itemElement.id = order.id;
-    let routeNameApi = searchRoutes.find(item => item.id == order.route_id);
+    let routeNameApi = searchRoute.find(item => item.id == order.route_id);
     let nameRoute = itemElement.querySelector('.item-col-name');
     nameRoute.innerHTML = routeNameApi.name;
     let date = itemElement.querySelector('.item-col-date');
@@ -38,15 +43,7 @@ async function downloadRoute() {
     url.pathname = '/api/routes';
     url.search = 'api_key=83d0d1af-0b9b-484e-bfc0-a2e63b7a456a';
     let response = await fetch(url);
-    searchRoutes = await response.json();
-    console.log('55');
-    // let xhr = new XMLHttpRequest();
-    // xhr.open('GET', url);
-    // xhr.responseType = 'json';
-    // xhr.onload = function () {
-    //     searchRoutes = this.response;
-    // };
-    // xhr.send();
+    searchRoute = await response.json();
 }
 
 function renderOrders(orders, page) {
@@ -93,7 +90,6 @@ function downloadOrders() {
     xhr.responseType = 'json';
     xhr.onload = function () {
         mainOrder = this.response;
-        console.log('44');
         renderOrders(this.response, 1);
         createPaginationItem(this.response);
     };
@@ -120,14 +116,87 @@ async function deleteOrder(order_id) {
 function deleteBtnHandler(event) {
     let form = event.target.closest('.modal').querySelector('form');
     let orderId = form.elements['order-id'].value;
-    console.log(orderId);
     deleteOrder(orderId);
 }
 
+async function downloadGuides(route_id) {
+    let url = new URL('http://exam-2023-1-api.std-900.ist.mospolytech.ru');
+    url.pathname = '/api/routes/' + route_id + '/guides';
+    url.search = 'api_key=83d0d1af-0b9b-484e-bfc0-a2e63b7a456a';
+    let response = await fetch(url);
+    searchGuide = await response.json();
+}
+
+async function actionModalHandler(event) {
+    let url = new URL('http://exam-2023-1-api.std-900.ist.mospolytech.ru');
+    url.pathname = '/api/orders';
+    url.search = 'api_key=83d0d1af-0b9b-484e-bfc0-a2e63b7a456a';
+    //узнаём, какое действие сейчас выполняет пользователь
+    let action = event.relatedTarget.dataset.action;
+    let modalWindow = event.target.closest('.modal');
+    let form = event.target.querySelector('form');
+    form.elements['action'].value = action;
+    event.target.querySelector('.modal-title').innerHTML = titles[action];
+    event.target.querySelector('.btn-action').innerHTML = titlesBtn[action];
+
+    if (action != 'show') {
+        form.elements['excursion-date'].removeAttribute('disabled');
+        form.elements['excursion-time'].removeAttribute('disabled');
+        form.elements['excursion-duration'].removeAttribute('disabled');
+        form.elements['count-people'].removeAttribute('disabled');
+        form.elements['option-quick-arrival'].removeAttribute('disabled');
+        form.elements['option-presents'].removeAttribute('disabled');
+    } else {
+        form.elements['excursion-date'].setAttribute('disabled', 1);
+        form.elements['excursion-time'].setAttribute('disabled', 1);
+        form.elements['excursion-duration'].setAttribute('disabled', 1);
+        form.elements['count-people'].setAttribute('disabled', 1);
+        form.elements['option-quick-arrival'].setAttribute('disabled', 1);
+        form.elements['option-presents'].setAttribute('disabled', 1);
+        modalWindow.querySelector('.btn-cancel').classList.add('d-none');
+        // modalWindow.querySelector('.btn-close').classList.add('d-none');
+
+    }
+
+    // if (action == 'edit' || action == 'show') {
+    let orderEvent = event.relatedTarget.closest('.col');
+    let orderId = event.relatedTarget.closest('.col').id;
+    form.elements['order-id'].value = orderId;
+
+    url.pathname += '/' + orderId;
+    let order = await fetch(url);
+    order = await order.json();
+    url.pathname = '/api/orders';
+    await downloadGuides(order.route_id);
+    let guideNameApi = searchGuide.find(item => item.id == order.guide_id);
+    form.querySelector('.guide-name').innerHTML = guideNameApi.name;
+    form.querySelector('.route-name').innerHTML = 
+    orderEvent.querySelector('.item-col-name').innerHTML;
+    form.elements['excursion-date'].value = order.date;
+    form.elements['excursion-time'].value = order.time;
+
+    if (order.duration == '1') {
+        form.elements['excursion-duration'].value = order.duration + ' час';
+    } else 
+        form.elements['excursion-duration'].value = order.duration + ' часа';
+
+    form.elements['count-people'].value = order.persons;
+    form.elements['option-quick-arrival'].checked = order.optionFirst;
+    form.elements['option-presents'].checked = order.optionSecond;
+    form.querySelector('.total-price').innerHTML = order.price + ' руб.';
+
+    // }
+}
+
+// async function actionHandler(event) {
+//     let modalWindow = event.target.closest('.modal');
+//     let formInputs = modalWindow.querySelector('form').elements;
+// }
 
 window.onload = async function () {
     await downloadRoute();
     downloadOrders();
-    // downloadRoute();
     document.querySelector('.delete-order-btn').onclick = deleteBtnHandler;
+    let actionModal = document.getElementById('show-order');
+    actionModal.addEventListener('show.bs.modal', actionModalHandler);
 };

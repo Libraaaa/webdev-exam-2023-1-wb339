@@ -49,6 +49,7 @@
             <div class="container p-0">
                 <h2 class="list-order-h2">Заявки</h2>
                 <p class="text-muted">Обращаем ваше внимание: на одной странице отображено не более пяти заявок.</p>
+                <p class="text-muted" style="color: rgb(154, 49, 70) !important;">ВНИМАНИЕ: Редактирование заявок временно недоступно. Приносим свои извинения.</p>
 
                 <div class="elements"
                     data-url="http://exam-2023-1-api.std-900.ist.mospolytech.ru/api/orders?api_key=83d0d1af-0b9b-484e-bfc0-a2e63b7a456a">
@@ -116,7 +117,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Оформление заявки</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
                 </div>
                 <div class="modal-body">
                     <form>
@@ -208,7 +209,7 @@
 
                         </div>
 
-                        <div class="total-price">
+                        <div class="total-price-div">
                             <div class="row mb-3">
                                 <div class="col-md-4">
                                     <label for="total-price" class="col-form-label">Итоговая стоимость</label>
@@ -221,12 +222,12 @@
                             </div>
                         </div>
                         <input type="hidden" name="action">
-                        <input type="hidden" name="task-id">
+                        <input type="hidden" name="order-id">
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отменить</button>
-                    <button type="button" class="btn btn-primary">Сохранить</button>
+                    <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal">Отменить</button>
+                    <button type="button" class="btn btn-primary btn-action" data-bs-dismiss="modal">Сохранить</button>
                 </div>
             </div>
         </div>
